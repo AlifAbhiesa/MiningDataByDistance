@@ -10,7 +10,13 @@ class Mining extends CI_Controller
 {
 	public function index(){
 
-		$result[] = $this->predict(3200);
+		$this->load->view('page_select');
+	}
+
+	public function getPrediction(){
+
+		$dataNumber = $_POST['dataNumber'];
+		$result[] = $this->predict($dataNumber);
 		echo json_encode($result);
 	}
 
